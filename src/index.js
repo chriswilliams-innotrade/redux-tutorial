@@ -5,27 +5,22 @@ import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
 
-import { createStore } from 'redux';
+import { combineReducers, createStore } from 'redux';
 
-function reducer(state, action) {
-    if (action.type === 'changeState'){
-        return action.payload.newState;
-    }
-    return 'State';
+function productsReducer(state = [], action) {
+    return state;
 }
 
-const store = createStore(reducer);
+function userReducer(state = '', action) {
+    return state;
+}
 
-console.log(store.getState())
+const allReducers = combineReducers({
+    products: productsReducer,
+    user: userReducer
+});
 
-const action = {
-    type: 'changeState',
-    payload: {
-        newState: 'New State'
-    }
-};
-
-store.dispatch(action);
+const store = createStore(allReducers);
 
 console.log(store.getState())
 
