@@ -6,7 +6,7 @@ import registerServiceWorker from './registerServiceWorker';
 
 
 import { combineReducers, createStore } from 'redux';
-import { provider, Provider } from 'react-redux';
+import { Provider } from 'react-redux';
 import productsReducer from './reducers/products-reducer';
 import userReducer from './reducers/user-reducer';
 
