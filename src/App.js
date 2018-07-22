@@ -15,7 +15,9 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.props.onApiRequest
+    setTimeout(() => {
+    this.props.onApiRequest();
+    }, 1500);
   }
   onUpdateUser(event) {
     this.props.onUpdateUser(event.target.value);
@@ -49,8 +51,8 @@ const mapStateToProps = (state, props) => {
 };
 
 const mapActionsToProps = {
-      onUpdateUser: updateUser
-      onApiRequest: apirequest
+      onUpdateUser: updateUser,
+      onApiRequest: apiRequest
  };
 
 /*
